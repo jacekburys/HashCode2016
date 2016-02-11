@@ -50,19 +50,24 @@ public class Main {
             warehouses.add(warehouse);
         }
 
-        int orders = scanner.nextInt();
+        int ordersCount = scanner.nextInt();
+        List<Order> orders = new ArrayList<>(ordersCount);
 
-        for(int i=0; i<orders; i++) {
-            // TODO : init order
+        for(int i=0; i<ordersCount; i++) {
 
-            int r = scanner.nextInt();
-            int c = scanner.nextInt();
+            int x = scanner.nextInt();
+            int y = scanner.nextInt();
 
             int n = scanner.nextInt();
+            List<Product> products = new ArrayList<>(n);
+
             for(int j=0; j<n; j++) {
                 int type = scanner.nextInt();
-                // TODO : put item in order
+                products.add(new Product(type, prodWeight.get(j)));
             }
+
+            Order order = new Order(products, new Location(x, y));
+            orders.add(order);
         }
 
         // TODO : init world
