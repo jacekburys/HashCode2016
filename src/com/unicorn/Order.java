@@ -32,4 +32,14 @@ public class Order {
         this.location = location;
     }
 
+    public void giveProduct(Product product) {
+        products.remove(product);
+    }
+
+    public void giveProducts(List<Product> list) {
+        for(Product p : list) {
+            products.remove(p);
+        }
+    }
+
 }
