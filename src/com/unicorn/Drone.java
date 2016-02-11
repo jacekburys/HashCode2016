@@ -8,7 +8,7 @@ public class Drone {
     private Location location;
     private List<Product> products;
 
-    public Drone(int id, int maximumLoad, List<Product>, Location location) {
+    public Drone(int id, int maximumLoad, List<Product> products, Location location) {
         this.id = id;
         this.maximumLoad = maximumLoad;
         this.location = location;
