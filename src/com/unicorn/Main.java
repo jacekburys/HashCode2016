@@ -78,6 +78,7 @@ public class Main {
         while(eventQueue.hasNext()) {
             Event event = eventQueue.getNext();
             event.execute(world);
+            world.schedule();
         }
     }
 }
