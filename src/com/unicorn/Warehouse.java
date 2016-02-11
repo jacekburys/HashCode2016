@@ -8,11 +8,16 @@ import java.util.Map;
 public class Warehouse {
 
     private Location location;
-
     private Map<Product, Integer> store;
+    private int id;
 
-    public Warehouse(Location location) {
+    public int getId() {
+        return id;
+    }
+
+    public Warehouse(Location location, int id) {
         this.location = location;
+        this.id = id;
     }
 
     public Location getLocation() {
@@ -32,5 +37,9 @@ public class Warehouse {
 
     public int getProductCount(Product product) {
         return store.get(product);
+    }
+
+    public void setStore(Map<Product, Integer> store) {
+        this.store = store;
     }
 }
