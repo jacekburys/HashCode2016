@@ -1,5 +1,8 @@
 package com.unicorn;
 
+import com.unicorn.events.Event;
+import com.unicorn.events.EventQueue;
+
 import java.io.File;
 import java.util.Scanner;
 
@@ -55,5 +58,14 @@ public class Main {
             }
         }
 
+        // TODO : init world
+        World world = new World();
+
+        EventQueue eventQueue = new EventQueue();
+
+        while(eventQueue.hasNext()) {
+            Event event = eventQueue.getNext();
+            event.execute(world);
+        }
     }
 }
