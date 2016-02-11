@@ -8,13 +8,17 @@ import java.util.List;
  */
 public class World {
 
-    private List<Order> orders = new ArrayList<>();
-    private List<Warehouse> warehouses = new ArrayList<>();
-    private List<Drone> drones = new ArrayList<>();
+    public List<Order> orders = new ArrayList<>();
+    public List<Warehouse> warehouses = new ArrayList<>();
+    public List<Drone> drones = new ArrayList<>();
 
     public World(List<Warehouse> warehouses, List<Drone> drones, List<Order> orders) {
         this.warehouses = warehouses;
         this.drones = drones;
         this.orders = orders;
+    }
+
+    public void schedule() {
+
     }
 }
