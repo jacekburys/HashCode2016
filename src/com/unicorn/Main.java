@@ -57,7 +57,8 @@ public class Main {
 
         List<Drone> drones = new ArrayList<>(dronesCount);
         for (int i = 0; i < dronesCount; i++) {
-            drones.add(new Drone(i, maxPayload, start));
+            Drone drone = new Drone(i, maxPayload, null, start);
+            drones.add(drone);
         }
 
         int ordersCount = scanner.nextInt();
