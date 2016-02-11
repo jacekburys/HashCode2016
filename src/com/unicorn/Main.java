@@ -18,10 +18,10 @@ public class Main {
            return;
         }
 
-        int rows, cols, drones, turns, maxPayload;
+        int rows, cols, dronesCount, turns, maxPayload;
         rows = scanner.nextInt();
         cols = scanner.nextInt();
-        drones = scanner.nextInt();
+        dronesCount = scanner.nextInt();
         turns = scanner.nextInt();
         maxPayload = scanner.nextInt();
 
@@ -50,6 +50,16 @@ public class Main {
             warehouses.add(warehouse);
         }
 
+        // Init drones
+
+        // Drones start at warehouse 0
+        Location start = warehouses.get(0).getLocation();
+
+        List<Drone> drones = new ArrayList<>(dronesCount);
+        for (int i = 0; i < dronesCount; i++) {
+            drones.add(new Drone(i, maxPayload, start));
+        }
+
         int ordersCount = scanner.nextInt();
         List<Order> orders = new ArrayList<>(ordersCount);
 
@@ -71,7 +81,7 @@ public class Main {
         }
 
         // TODO : init world
-        World world = new World();
+        World world = new World(warehouses, drones, orders);
 
         EventQueue eventQueue = new EventQueue();
 
