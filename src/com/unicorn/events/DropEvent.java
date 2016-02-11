@@ -19,7 +19,6 @@ public class DropEvent extends Event {
     @Override
     public void execute(World world) {
         world.drones.add(drone);
-        // TODO : move the products to the order
-
+        order.giveProducts(products);
     }
 }
